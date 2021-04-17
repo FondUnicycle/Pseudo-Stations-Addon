@@ -1,0 +1,997 @@
+//Copyright 2021 FondUnicycle 
+//Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+//http://www.apache.org/licenses/LICENSE-2.0 
+//Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.brewing_stand.state_0",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bases",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -3],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [10, 14],
+									"uv_size": [5, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, -7],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 1],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "pole",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "rod",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, 0, -1],
+							"size": [2, 14, 2],
+							"uv": {
+								"north": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"east": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"south": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"west": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"up": {
+									"uv": [9, 9],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								},
+								"down": {
+									"uv": [9, 14],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "potions",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 180, 0],
+							"uv": {
+								"south": {
+									"uv": [16, 0],
+									"uv_size": [-8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [-8, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -120, 0],
+							"uv": {
+								"south": {
+									"uv": [8, 0],
+									"uv_size": [8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -60, 0],
+							"uv": {
+								"south": {
+									"uv": [16, 0],
+									"uv_size": [-8, 16],
+									"material_instance": "side"
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.brewing_stand.state_1",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bases",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -3],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [10, 14],
+									"uv_size": [5, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, -7],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 1],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "pole",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "rod",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, 0, -1],
+							"size": [2, 14, 2],
+							"uv": {
+								"north": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"east": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"south": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"west": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"up": {
+									"uv": [9, 9],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								},
+								"down": {
+									"uv": [9, 14],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "potions",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 180, 0],
+							"uv": {
+								"south": {
+									"uv": [0, 0],
+									"uv_size": [8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [-8, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -120, 0],
+							"uv": {
+								"south": {
+									"uv": [8, 0],
+									"uv_size": [8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -60, 0],
+							"uv": {
+								"south": {
+									"uv": [16, 0],
+									"uv_size": [-8, 16],
+									"material_instance": "side"
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.brewing_stand.state_2",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bases",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -3],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [10, 14],
+									"uv_size": [5, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, -7],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 1],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "pole",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "rod",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, 0, -1],
+							"size": [2, 14, 2],
+							"uv": {
+								"north": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"east": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"south": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"west": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"up": {
+									"uv": [9, 9],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								},
+								"down": {
+									"uv": [9, 14],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "potions",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 180, 0],
+							"uv": {
+								"south": {
+									"uv": [16, 0],
+									"uv_size": [-8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [-8, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -120, 0],
+							"uv": {
+								"south": {
+									"uv": [8, 0],
+									"uv_size": [-8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -60, 0],
+							"uv": {
+								"south": {
+									"uv": [16, 0],
+									"uv_size": [-8, 16],
+									"material_instance": "side"
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.brewing_stand.state_3",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bases",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -3],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [10, 14],
+									"uv_size": [5, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [5, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [15, 11],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, -7],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [1, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 7],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 1],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"east": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"south": {
+									"uv": [2, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"west": {
+									"uv": [9, 14],
+									"uv_size": [6, 2],
+									"material_instance": "down"
+								},
+								"up": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								},
+								"down": {
+									"uv": [8, 15],
+									"uv_size": [-6, -6],
+									"material_instance": "down"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "pole",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "rod",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, 0, -1],
+							"size": [2, 14, 2],
+							"uv": {
+								"north": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"east": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"south": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"west": {
+									"uv": [7, 2],
+									"uv_size": [2, 14],
+									"material_instance": "up"
+								},
+								"up": {
+									"uv": [9, 9],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								},
+								"down": {
+									"uv": [9, 14],
+									"uv_size": [-2, -2],
+									"material_instance": "up"
+								}
+							}
+						}
+					]
+				},
+				{
+					"name": "potions",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 180, 0],
+							"uv": {
+								"south": {
+									"uv": [16, 0],
+									"uv_size": [-8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [-8, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -120, 0],
+							"uv": {
+								"south": {
+									"uv": [8, 0],
+									"uv_size": [8, 16],
+									"material_instance": "side"
+								}
+							}
+						},
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -60, 0],
+							"uv": {
+								"south": {
+									"uv": [0, 0],
+									"uv_size": [8, 16],
+									"material_instance": "side"
+								}
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"description": {
+				"identifier": "geometry.brewing_stand.state_4",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "bases",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7, 0, -3],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {"uv": [9, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"east": {"uv": [5, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"south": {"uv": [10, 14], "uv_size": [5, 2], "material_instance": "down"},
+								"west": {"uv": [5, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"up": {"uv": [15, 11], "uv_size": [-6, -6], "material_instance": "down"},
+								"down": {"uv": [15, 11], "uv_size": [-6, -6], "material_instance": "down"}
+							}
+						},
+						{
+							"origin": [0, 0, -7],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {"uv": [2, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"east": {"uv": [1, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"south": {"uv": [2, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"west": {"uv": [1, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"up": {"uv": [8, 7], "uv_size": [-6, -6], "material_instance": "down"},
+								"down": {"uv": [8, 7], "uv_size": [-6, -6], "material_instance": "down"}
+							}
+						},
+						{
+							"origin": [0, 0, 1],
+							"size": [6, 2, 6],
+							"uv": {
+								"north": {"uv": [2, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"east": {"uv": [9, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"south": {"uv": [2, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"west": {"uv": [9, 14], "uv_size": [6, 2], "material_instance": "down"},
+								"up": {"uv": [8, 15], "uv_size": [-6, -6], "material_instance": "down"},
+								"down": {"uv": [8, 15], "uv_size": [-6, -6], "material_instance": "down"}
+							}
+						}
+					]
+				},
+				{
+					"name": "pole",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "rod",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-1, 0, -1],
+							"size": [2, 14, 2],
+							"uv": {
+								"north": {"uv": [7, 2], "uv_size": [2, 14], "material_instance": "up"},
+								"east": {"uv": [7, 2], "uv_size": [2, 14], "material_instance": "up"},
+								"south": {"uv": [7, 2], "uv_size": [2, 14], "material_instance": "up"},
+								"west": {"uv": [7, 2], "uv_size": [2, 14], "material_instance": "up"},
+								"up": {"uv": [9, 9], "uv_size": [-2, -2], "material_instance": "up"},
+								"down": {"uv": [9, 14], "uv_size": [-2, -2], "material_instance": "up"}
+							}
+						}
+					]
+				},
+				{
+					"name": "potions",
+					"parent": "pole",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, 180, 0],
+							"uv": {
+								"south": {"uv": [0, 0], "uv_size": [8, 16], "material_instance": "side"}
+							}
+						},
+						{
+							"origin": [-8, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -120, 0],
+							"uv": {
+								"south": {"uv": [8, 0], "uv_size": [-8, 16], "material_instance": "side"}
+							}
+						},
+						{
+							"origin": [0, 0, 0],
+							"size": [8, 16, 0],
+							"pivot": [0, 0, 0],
+							"rotation": [0, -60, 0],
+							"uv": {
+								"south": {"uv": [0, 0], "uv_size": [8, 16], "material_instance": "side"}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

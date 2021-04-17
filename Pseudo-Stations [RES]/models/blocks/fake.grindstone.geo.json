@@ -1,0 +1,107 @@
+//Copyright 2021 FondUnicycle 
+//Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+//http://www.apache.org/licenses/LICENSE-2.0 
+//Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.grindstone",
+				"texture_width": 16,
+				"texture_height": 16,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "grindstone",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "leg0",
+					"parent": "grindstone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [4, 7, -3],
+							"size": [2, 6, 6],
+							"uv": {
+								"north": {"uv": [6, 0], "uv_size": [2, 6], "material_instance": "pivot"},
+								"east": {"uv": [0, 0], "uv_size": [6, 6], "material_instance": "pivot"},
+								"south": {"uv": [6, 0], "uv_size": [2, 6], "material_instance": "pivot"},
+								"west": {"uv": [0, 0], "uv_size": [6, 6], "material_instance": "pivot"},
+								"up": {"uv": [10, 6], "uv_size": [-2, -6], "material_instance": "pivot"},
+								"down": {"uv": [8, 6], "uv_size": [-2, -6], "material_instance": "pivot"}
+							}
+						},
+						{
+							"origin": [4, 0, -2],
+							"size": [2, 7, 4],
+							"uv": {
+								"north": {"uv": [2, 9], "uv_size": [2, 7], "material_instance": "leg"},
+								"east": {"uv": [10, 16], "uv_size": [-4, -7], "material_instance": "leg"},
+								"south": {"uv": [2, 9], "uv_size": [2, 7], "material_instance": "leg"},
+								"west": {"uv": [6, 9], "uv_size": [4, 7], "material_instance": "leg"},
+								"up": {"uv": [11, 7], "uv_size": [-2, -4], "material_instance": "leg"},
+								"down": {"uv": [11, 7], "uv_size": [-2, -4], "material_instance": "leg"}
+							}
+						}
+					]
+				},
+				{
+					"name": "wheel",
+					"parent": "grindstone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-4, 4, -6],
+							"size": [8, 12, 12],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [8, 12], "material_instance": "round"},
+								"east": {"uv": [0, 0], "uv_size": [12, 12], "material_instance": "side"},
+								"south": {"uv": [0, 0], "uv_size": [8, 12], "material_instance": "round"},
+								"west": {"uv": [0, 0], "uv_size": [12, 12], "material_instance": "side"},
+								"up": {"uv": [8, 12], "uv_size": [-8, -12], "material_instance": "round"},
+								"down": {"uv": [8, 12], "uv_size": [-8, -12], "material_instance": "round"}
+							}
+						}
+					]
+				},
+				{
+					"name": "leg1",
+					"parent": "wheel",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-6, 7, -3],
+							"size": [2, 6, 6],
+							"uv": {
+								"north": {"uv": [6, 0], "uv_size": [2, 6], "material_instance": "pivot"},
+								"east": {"uv": [0, 0], "uv_size": [6, 6], "material_instance": "pivot"},
+								"south": {"uv": [6, 0], "uv_size": [2, 6], "material_instance": "pivot"},
+								"west": {"uv": [0, 0], "uv_size": [6, 6], "material_instance": "pivot"},
+								"up": {"uv": [10, 6], "uv_size": [-2, -6], "material_instance": "pivot"},
+								"down": {"uv": [8, 6], "uv_size": [-2, -6], "material_instance": "pivot"}
+							}
+						},
+						{
+							"origin": [-6, 0, -2],
+							"size": [2, 7, 4],
+							"uv": {
+								"north": {"uv": [2, 9], "uv_size": [2, 7], "material_instance": "leg"},
+								"east": {"uv": [10, 16], "uv_size": [-4, -7], "material_instance": "leg"},
+								"south": {"uv": [2, 9], "uv_size": [2, 7], "material_instance": "leg"},
+								"west": {"uv": [6, 9], "uv_size": [4, 7], "material_instance": "leg"},
+								"up": {"uv": [11, 7], "uv_size": [-2, -4], "material_instance": "leg"},
+								"down": {"uv": [11, 7], "uv_size": [-2, -4], "material_instance": "leg"}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
