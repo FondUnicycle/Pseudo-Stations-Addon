@@ -1,0 +1,39 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Pseudo-Stations [BEH] 1.0.0",
+		"description": "Adds fake workstations. Ideal for building around villagers. \n§oMade by §l§9FondUnicycle",
+		"uuid": "3ba4b240-8b9a-40f9-9bba-2cd5a1cecf89",
+		"version": [
+			1,
+			0,
+			0
+		],
+		"min_engine_version": [
+			1,
+			16,
+			100
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "fbc17b58-ca68-4c63-b63d-a29621cb72c1",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"version": [
+				1,
+				0,
+				0
+			],
+			"uuid": "92a2f672-e3e8-43cd-a145-5a5ec093f45c"
+		}
+	]
+}
