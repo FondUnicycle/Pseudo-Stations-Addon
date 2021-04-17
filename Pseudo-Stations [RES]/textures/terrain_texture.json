@@ -1,0 +1,17 @@
+{
+  "resource_pack_name": "pseudostationsRP",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 4,
+  "texture_data": {
+    "compost": {
+      "textures": "textures/blocks/compost"
+    },
+    "compost_ready": {
+      "textures": "textures/blocks/compost_ready"
+    },
+    "pseudo_water": {
+      "textures": "textures/blocks/water_still1"
+    }
+  }
+}

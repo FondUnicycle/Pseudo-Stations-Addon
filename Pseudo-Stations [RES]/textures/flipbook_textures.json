@@ -1,0 +1,7 @@
+[
+  {
+    "flipbook_texture": "textures/blocks/water_still1",
+    "atlas_tile": "pseudo_water",
+    "ticks_per_frame": 2
+  }
+] 
