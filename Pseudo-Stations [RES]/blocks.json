@@ -1,0 +1,46 @@
+{
+  "format_version": [
+    1,
+    1,
+    0
+  ],
+  "fake.barrel": {
+    "sound": "wood"
+  },
+  "fake.blast_furnace": {
+    "sound": "stone"
+  },
+  "fake.brewing_stand": {
+    "sound": "stone"
+  },
+  "fake.cartography_table": {
+    "sound": "wood"
+  },
+  "fake.cauldron": {
+    "sound": "stone"
+  },
+  "fake.composter": {
+    "sound": "wood"
+  },
+  "fake.fletching_table": {
+    "sound": "wood"
+  },
+  "fake.grindstone": {
+    "sound": "stone"
+  },
+  "fake.lectern": {
+    "sound": "wood"
+  },
+  "fake.loom": {
+    "sound": "wood"
+  },
+  "fake.smithing_table": {
+    "sound": "wood"
+  },
+  "fake.smoker": {
+    "sound": "stone"
+  },
+  "fake.stonecutter": {
+    "sound": "stone"
+  }
+}
