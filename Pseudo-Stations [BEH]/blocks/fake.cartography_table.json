@@ -1,0 +1,153 @@
+//Copyright 2021 FondUnicycle 
+//Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+//http://www.apache.org/licenses/LICENSE-2.0 
+//Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "pseudostations:fake.cartography_table",
+			"is_experimental": false,
+			"properties": {
+				"pseudostations:direction": [
+					0,
+					1,
+					2,
+					3
+				]
+			}
+		},
+		"components": {
+			"minecraft:display_name": "pseudostations:fake.cartography_table",
+			"minecraft:destroy_time": 2,
+			"minecraft:entity_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "cartography_table_bottom",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "cartography_table_bottom",
+					"render_method": "opaque"
+				},
+				"east": {
+					"texture": "cartography_table_side3",
+					"render_method": "opaque"
+				},
+				"north": {
+					"texture": "cartography_table_side3",
+					"render_method": "opaque"
+				},
+				"south": {
+					"texture": "cartography_table_side1",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "cartography_table_top",
+					"render_method": "opaque"
+				},
+				"west": {
+					"texture": "cartography_table_side2",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.basic_cube",
+			"minecraft:on_player_placing": {
+				"event": "block_placed"
+			},
+			"minecraft:on_interact": {
+				"condition": "query.is_sneaking",
+				"event": "rotate_block"
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('pseudostations:direction') == 1",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						180,
+						0
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:direction') == 0",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:direction') == 3",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						-90,
+						0
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:direction') == 2",
+				"components": {
+					"minecraft:rotation": [
+						0,
+						90,
+						0
+					]
+				}
+			}
+		],
+		"events": {
+			"block_placed": {
+				"set_block_property": {
+					"pseudostations:direction": "query.cardinal_facing_2d - 2.0"
+				}
+			},
+			"rotate_block": {
+			  "sequence": [
+			    {
+			      "run_command": {
+			        "command": [
+			          "playsound dig.wood @a ~~~ 1 0.8"
+			        ]
+			      }
+			    },
+			    {
+				    "set_block_property": {
+					    "pseudostations:direction": "query.block_property('pseudostations:direction') == 0 ? 3 : (query.block_property('pseudostations:direction') == 1 ? 2 : (query.block_property('pseudostations:direction') == 3 ? 1 : (query.block_property('pseudostations:direction') == 0)))"
+				    }
+				  }
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,234 @@
+//Copyright 2021 FondUnicycle 
+//Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+//http://www.apache.org/licenses/LICENSE-2.0 
+//Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "pseudostations:fake.composter",
+			"is_experimental": false,
+			"properties": {
+				"pseudostations:level": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6,
+					7,
+					8
+				]
+			}
+		},
+		"components": {
+			"minecraft:display_name": "pseudostations:fake.composter",
+			"minecraft:destroy_time": 2,
+			"minecraft:block_light_absorption": 0.0,
+			"minecraft:entity_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:rotation": [
+				0,
+				180,
+				0
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "composter_side",
+					"render_method": "alpha_test"
+				},
+				"compost": {
+					"texture": "compost",
+					"render_method": "alpha_test",
+					"face_dimming": false
+				},
+				"down": {
+					"texture": "composter_bottom",
+					"render_method": "alpha_test"
+				},
+				"side": {
+					"texture": "composter_side",
+					"render_method": "alpha_test"
+				},
+				"inner_side": {
+					"texture": "composter_side",
+					"render_method": "alpha_test",
+					"face_dimming": false
+				},
+				"up": {
+					"texture": "composter_top",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:geometry": "geometry.composter.state_0",
+			"minecraft:on_player_placing": {
+				"event": "block_placed"
+			},
+			"minecraft:on_interact": {
+				"condition": "query.is_sneaking",
+				"event": "change_level"
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('pseudostations:level') == 0",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_0",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "composter_side",
+							"render_method": "alpha_test"
+						},
+						"compost": {
+							"texture": "composter_bottom",
+							"render_method": "alpha_test",
+							"face_dimming": false
+						},
+						"down": {
+							"texture": "composter_bottom",
+							"render_method": "alpha_test"
+						},
+						"side": {
+							"texture": "composter_side",
+							"render_method": "alpha_test"
+						},
+						"inner_side": {
+							"texture": "composter_side",
+							"render_method": "alpha_test",
+							"face_dimming": false
+						},
+						"up": {
+							"texture": "composter_top",
+							"render_method": "alpha_test"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 1",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_1"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 2",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_2"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 3",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_3"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 4",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_4"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 5",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_5"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 6",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_6"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 7",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_full"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:level') == 8",
+				"components": {
+					"minecraft:geometry": "geometry.composter.state_full",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "missing",
+							"render_method": "alpha_test"
+						},
+						"compost": {
+							"texture": "compost_ready",
+							"render_method": "alpha_test",
+							"face_dimming": false
+						},
+						"down": {
+							"texture": "composter_bottom",
+							"render_method": "alpha_test"
+						},
+						"side": {
+							"texture": "composter_side",
+							"render_method": "alpha_test"
+						},
+						"inner_side": {
+							"texture": "composter_side",
+							"render_method": "alpha_test",
+							"face_dimming": false
+						},
+						"up": {
+							"texture": "composter_top",
+							"render_method": "alpha_test",
+							"face_dimming": false
+						}
+					}
+				}
+			}
+		],
+		"events": {
+			"block_placed": {
+				"set_block_property": {
+					"pseudostations:level": 0
+				}
+			},
+			"change_level": {
+			  "sequence": [
+			    {
+			      "run_command": {
+			        "command": [
+			          "particle minecraft:crop_growth_emitter ~~~",
+			          "playsound block.composter.fill_success @a ~~~"
+			        ]
+			      }
+			    },
+			    {
+				    "set_block_property": {
+					    "pseudostations:level": "query.block_property('pseudostations:level') == 8 ? 0 : (query.block_property('pseudostations:level') + 1)"
+				    }
+				  }
+				]
+			}
+		}
+	}
+}

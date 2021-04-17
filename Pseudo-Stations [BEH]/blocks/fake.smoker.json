@@ -1,0 +1,504 @@
+//Copyright 2021 FondUnicycle 
+//Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+//http://www.apache.org/licenses/LICENSE-2.0 
+//Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "pseudostations:fake.smoker",
+			"is_experimental": false,
+			"properties": {
+				"pseudostations:direction": [
+					0,
+					1,
+					2,
+					3
+				],
+				"pseudostations:lit": [
+					0,
+					1
+				]
+			}
+		},
+		"components": {
+			"minecraft:display_name": "pseudostations:fake.smoker",
+			"minecraft:destroy_time": 2,
+			"minecraft:entity_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "smoker_side",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "smoker_bottom",
+					"render_method": "opaque"
+				},
+				"east": {
+					"texture": "smoker_side",
+					"render_method": "opaque"
+				},
+				"north": {
+					"texture": "smoker_front_off",
+					"render_method": "opaque"
+				},
+				"south": {
+					"texture": "smoker_side",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "smoker_top",
+					"render_method": "opaque"
+				},
+				"west": {
+					"texture": "smoker_side",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.furnace",
+			"minecraft:on_player_placing": {
+				"event": "block_placed"
+			},
+			"minecraft:on_interact": {
+				"event": "change_block"
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('pseudostations:lit') == 0 && query.block_property('pseudostations:direction') == 0",
+				"components": { "minecraft:rotation": [ 0, 180, 0 ] }
+			},
+			{
+				"condition": "query.block_property('pseudostations:lit') == 0 && query.block_property('pseudostations:direction') == 1",
+				"components": { "minecraft:rotation": [ 0, 0, 0 ] }
+			},
+			{
+				"condition": "query.block_property('pseudostations:lit') == 0 && query.block_property('pseudostations:direction') == 2",
+				"components": { "minecraft:rotation": [ 0, -90, 0 ] }
+			},
+			{
+				"condition": "query.block_property('pseudostations:lit') == 0 && query.block_property('pseudostations:direction') == 3",
+				"components": { "minecraft:rotation": [ 0, 90, 0 ] }
+			},
+			{
+				"condition": "query.block_property('pseudostations:lit') == 1 && query.block_property('pseudostations:direction') == 0",
+				"components": {
+					"minecraft:block_light_emission": 0.87,
+					"minecraft:rotation": [ 0, 180, 0 ],
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"down": {
+							"texture": "smoker_bottom",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"east": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"north": {
+							"texture": "smoker_front_on",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"south": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"up": {
+							"texture": "smoker_top",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"west": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						}
+					},
+					"minecraft:ticking": {
+					  "on_tick": {
+             "event": "particles"
+           },
+           "range": [
+             0,
+             5
+           ]
+         }
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:lit') == 1 && query.block_property('pseudostations:direction') == 1",
+				"components": {
+					"minecraft:block_light_emission": 0.87,
+					"minecraft:rotation": [ 0, 0, 0 ],
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"down": {
+							"texture": "smoker_bottom",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"east": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"north": {
+							"texture": "smoker_front_on",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"south": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"up": {
+							"texture": "smoker_top",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"west": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						}
+					},
+					"minecraft:ticking": {
+					  "on_tick": {
+             "event": "particles"
+           },
+           "range": [
+             0,
+             5
+           ]
+         }
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:lit') == 1 && query.block_property('pseudostations:direction') == 2",
+				"components": {
+					"minecraft:block_light_emission": 0.87,
+					"minecraft:rotation": [ 0, -90, 0 ],
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"down": {
+							"texture": "smoker_bottom",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"east": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"north": {
+							"texture": "smoker_front_on",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"south": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"up": {
+							"texture": "smoker_top",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"west": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						}
+					},
+					"minecraft:ticking": {
+					  "on_tick": {
+             "event": "particles"
+           },
+           "range": [
+             0,
+             5
+           ]
+         }
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:lit') == 1 && query.block_property('pseudostations:direction') == 3",
+				"components": {
+					"minecraft:block_light_emission": 0.87,
+					"minecraft:rotation": [ 0, 90, 0 ],
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"down": {
+							"texture": "smoker_bottom",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"east": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"north": {
+							"texture": "smoker_front_on",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"south": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"up": {
+							"texture": "smoker_top",
+							"render_method": "opaque",
+							"face_dimming": false
+						},
+						"west": {
+							"texture": "smoker_side",
+							"render_method": "opaque",
+							"face_dimming": false
+						}
+					},
+					"minecraft:ticking": {
+					  "on_tick": {
+             "event": "particles"
+           },
+           "range": [
+             0,
+             5
+           ]
+         }
+				}
+			}
+		],
+		"events": {
+			"block_placed": {
+				"sequence": [
+					{
+						"set_block_property": {
+							"pseudostations:lit": 0
+						}
+					},
+					{
+						"set_block_property": {
+							"pseudostations:direction": "query.cardinal_facing_2d - 2.0"
+						}
+					}
+				]
+			},
+			"change_block": {
+				"sequence": [
+					{
+						"condition": "!query.is_sneaking",
+						"sequence":[
+						  {
+						    "condition": "query.block_property('pseudostations:lit') == 0",
+						    "run_command": {
+						      "command": [
+						        "playsound fire.ignite @a ~~~"
+						      ]
+						    }
+						  },
+						  {
+						    "condition": "query.block_property('pseudostations:lit') == 1",
+						    "run_command": {
+						      "command": [
+						        "playsound random.fizz @a ~~~ 0.5 2"
+						      ]
+						    }
+						  },
+						  {
+						    "set_block_property": {
+							    "pseudostations:lit": "query.block_property('pseudostations:lit') == 0 ? 1 : 0"
+							  }
+						  }
+						]
+					},
+					{
+						"condition": "query.is_sneaking",
+						"sequence": [
+						  {
+						    "run_command": {
+						      "command": [
+						        "playsound dig.stone @a ~~~ 1 0.8"
+						      ]
+						    }
+						   },
+						  {
+						    "set_block_property": {
+							    "pseudostations:direction": "query.block_property('pseudostations:direction') == 0 ? 3 : (query.block_property('pseudostations:direction') == 1 ? 2 : (query.block_property('pseudostations:direction') == 3 ? 1 : (query.block_property('pseudostations:direction') == 0)))"
+						    }
+						  }
+						]
+					}
+				]
+			},
+			"particles":{
+			  "sequence":[
+			    {
+			      "condition": "query.block_property('pseudostations:direction') == 0",
+			      "randomize": [
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~ ~-0.3 ~0.53",
+			              "particle minecraft:basic_smoke_particle ~ ~-0.3 ~0.53"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~0.3 ~-0.2 ~0.53",
+			              "particle minecraft:basic_smoke_particle ~0.3 ~-0.2 ~0.53"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~-0.3 ~-0.2 ~0.53",
+			              "particle minecraft:basic_smoke_particle ~-0.3 ~-0.2 ~0.53"
+			            ]
+			          }
+			        }
+			      ]
+			    },
+			    {
+			      "condition": "query.block_property('pseudostations:direction') == 1",
+			      "randomize": [
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~ ~-0.3 ~-0.53",
+			              "particle minecraft:basic_smoke_particle ~ ~-0.3 ~-0.53"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~0.3 ~-0.2 ~-0.53",
+			              "particle minecraft:basic_smoke_particle ~0.3 ~-0.2 ~-0.53"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~-0.3 ~-0.2 ~-0.53",
+			              "particle minecraft:basic_smoke_particle ~-0.3 ~-0.2 ~-0.53"
+			            ]
+			          }
+			        }
+			      ]
+			    },
+			    {
+			      "condition": "query.block_property('pseudostations:direction') == 2",
+			      "randomize": [
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~0.53 ~-0.3 ~",
+			              "particle minecraft:basic_smoke_particle ~0.53 ~-0.3 ~"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~0.53 ~-0.2 ~0.3",
+			              "particle minecraft:basic_smoke_particle ~0.53 ~-0.2 ~0.3"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~0.53 ~-0.2 ~-0.3",
+			              "particle minecraft:basic_smoke_particle ~0.53 ~-0.2 ~-0.3"
+			            ]
+			          }
+			        }
+			      ]
+			    },
+			    {
+			      "condition": "query.block_property('pseudostations:direction') == 3",
+			      "randomize": [
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~-0.53 ~-0.3 ~",
+			              "particle minecraft:basic_smoke_particle ~-0.53 ~-0.3 ~"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~-0.53 ~-0.2 ~0.3",
+			              "particle minecraft:basic_smoke_particle ~-0.53 ~-0.2 ~0.3"
+			            ]
+			          }
+			        },
+			        {
+			          "run_command":{
+			            "command": [
+			              "particle minecraft:basic_flame_particle ~-0.53 ~-0.2 ~-0.3",
+			              "particle minecraft:basic_smoke_particle ~-0.53 ~-0.2 ~-0.3"
+			            ]
+			          }
+			        }
+			      ]
+			    }
+			  ]
+			}
+		}
+	}
+}

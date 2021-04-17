@@ -1,0 +1,217 @@
+//Copyright 2021 FondUnicycle 
+//Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+//http://www.apache.org/licenses/LICENSE-2.0 
+//Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "pseudostations:fake.cauldron",
+			"is_experimental": false,
+			"properties": {
+				"pseudostations:state": [
+					0,
+					1,
+					2,
+					3,
+					4
+				]
+			}
+		},
+		"components": {
+			"minecraft:display_name": "pseudostations:fake.cauldron",
+			"minecraft:destroy_time": 2,
+			"minecraft:block_light_absorption": 1,
+			"minecraft:entity_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:pick_collision": {
+				"origin": [
+					-8,
+					0,
+					-8
+				],
+				"size": [
+					16,
+					16,
+					16
+				]
+			},
+			"minecraft:rotation": [
+				0,
+				180,
+				0
+			],
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "cauldron_side",
+					"render_method": "opaque"
+				},
+				"liquid": {
+					"texture": "pseudo_water",
+					"render_method": "opaque"
+				},
+				"bottom": {
+					"texture": "cauldron_inner",
+					"render_method": "opaque"
+				},
+				"down": {
+					"texture": "cauldron_bottom",
+					"render_method": "opaque"
+				},
+				"side": {
+					"texture": "cauldron_side",
+					"render_method": "opaque"
+				},
+				"inner_bottom": {
+					"texture": "cauldron_inner",
+					"render_method": "opaque"
+				},
+				"inner_side": {
+					"texture": "cauldron_side",
+					"render_method": "opaque"
+				},
+				"up": {
+					"texture": "cauldron_top",
+					"render_method": "opaque"
+				}
+			},
+			"minecraft:geometry": "geometry.cauldron.empty",
+			"minecraft:on_player_placing": {
+				"event": "block_placed"
+			},
+			"minecraft:on_interact": {
+				"condition": "query.is_sneaking",
+				"event": "change_state"
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('pseudostations:state') == 0",
+				"components": {
+					"minecraft:geometry": "geometry.cauldron.empty"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:state') == 1",
+				"components": {
+					"minecraft:geometry": "geometry.cauldron.level_1"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:state') == 2",
+				"components": {
+					"minecraft:geometry": "geometry.cauldron.level_2"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:state') == 3",
+				"components": {
+					"minecraft:geometry": "geometry.cauldron.full"
+				}
+			},
+			{
+				"condition": "query.block_property('pseudostations:state') == 4",
+				"components": {
+					"minecraft:block_light_emission": 1.0,
+					"minecraft:geometry": "geometry.cauldron.full",
+					"minecraft:material_instances": {
+						"*": {
+							"texture": "cauldron_side",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						},
+						"liquid": {
+							"texture": "still_lava",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						},
+						"bottom": {
+							"texture": "cauldron_inner",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						},
+						"down": {
+							"texture": "cauldron_bottom",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						},
+						"side": {
+							"texture": "cauldron_side",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						},
+						"inner_bottom": {
+							"texture": "cauldron_bottom",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						},
+						"inner_side": {
+							"texture": "cauldron_side",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						},
+						"up": {
+							"texture": "cauldron_top",
+							"render_method": "alpha_test",
+					    "face_dimming": false
+						}
+					}
+				}
+			}
+		],
+		"events": {
+			"block_placed": {
+				"set_block_property": {
+					"pseudostations:state": 0
+				}
+			},
+			"change_state": {
+			  "sequence": [
+			    {
+			      "condition": "query.block_property('pseudostations:state') < 3",
+			      "run_command": {
+			        "command": [
+			          "playsound cauldron.fillpotion @a ~~~"
+			        ]
+			      }
+			    },
+			    {
+			      "condition": "query.block_property('pseudostations:state') == 3",
+			      "run_command": {
+			        "command": [
+			          "particle minecraft:lava_particle ~ ~0.8 ~",
+			          "particle minecraft:lava_particle ~ ~0.8 ~",
+			          "playsound bucket.empty_lava @a ~~~"
+			        ]
+			      }
+			    },
+			    {
+			      "condition": "query.block_property('pseudostations:state') == 4",
+			      "run_command": {
+			        "command": [
+			          "particle minecraft:cauldron_explosion_emitter ~ ~0.5 ~",
+			          "playsound random.fizz @a ~~~ 0.5 2"
+			        ]
+			      }
+			    },
+			    {
+				    "set_block_property": {
+					    "pseudostations:state": "query.block_property('pseudostations:state') == 4 ? 0 : (query.block_property('pseudostations:state') + 1)"
+				    }
+				  }
+				]
+			}
+		}
+	}
+}
