@@ -1,13 +1,13 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "Pseudo-Stations [RES] 1.0.0",
+		"name": "Pseudo-Stations [RES] 1.0.1",
 		"description": "Resources for the §o§lPseudo-Stations§r addon \n§oMade by §l§9FondUnicycle",
 		"uuid": "92a2f672-e3e8-43cd-a145-5a5ec093f45c",
 		"version": [
 			1,
 			0,
-			0
+			1
 		],
 		"min_engine_version": [
 			1,
@@ -22,7 +22,7 @@
 			"version": [
 				1,
 				0,
-				0
+				1
 			]
 		}
 	]
