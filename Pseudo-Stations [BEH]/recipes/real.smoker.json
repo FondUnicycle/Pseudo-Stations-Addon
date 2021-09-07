@@ -12,6 +12,7 @@
     "tags": [
       "crafting_table"
     ],
+    "priority": 2,
     "pattern": [
       "#"
     ],
